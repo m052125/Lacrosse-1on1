@@ -350,7 +350,7 @@ function submitData() {
 
     fetch(LAMBDA_URL, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'text/plain' },
         body: JSON.stringify(payload)
     })
     .then(r => {
@@ -380,7 +380,7 @@ function undoLast() {
     if (!lastPayload) return;
     fetch(LAMBDA_URL, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'text/plain' },
         body: JSON.stringify({ ...lastPayload, undo: true })
     })
     .then(r => {
